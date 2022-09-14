@@ -1,4 +1,4 @@
-export const CartIcon = () => {
+export function CartIcon() {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -15,9 +15,9 @@ export const CartIcon = () => {
       />
     </svg>
   );
-};
+}
 
-export const ChevronDown = () => {
+export function ChevronDown() {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -30,9 +30,9 @@ export const ChevronDown = () => {
       <path strokeLinecap='round' strokeLinejoin='round' d='M19 9l-7 7-7-7' />
     </svg>
   );
-};
+}
 
-export const ChevronUp = () => {
+export function ChevronUp() {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -45,4 +45,4 @@ export const ChevronUp = () => {
       <path strokeLinecap='round' strokeLinejoin='round' d='M5 15l7-7 7 7' />
     </svg>
   );
-};
+}
