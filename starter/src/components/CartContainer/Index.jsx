@@ -1,10 +1,17 @@
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { getCartItems } from "../../features/cart/cartSlice";
 import { openModal } from "../../features/modal/modalSlice";
 import CartItem from "../CartItem/Index";
 
 function CartContainer() {
-  const { cartItems, total, amount } = useSelector((store) => store.cart);
+  const { cartItems, total, amount, isLoading } = useSelector(
+    (store) => store.cart
+  );
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCartItems());
+  }, []);
   if (amount < 1) {
     return (
       <section className='cart'>
@@ -15,6 +22,14 @@ function CartContainer() {
       </section>
     );
   }
+  if (isLoading) {
+    return (
+      <div className='loading'>
+        <h1>Loading...</h1>
+      </div>
+    );
+  }
+
   return (
     <section className='cart'>
       <header>

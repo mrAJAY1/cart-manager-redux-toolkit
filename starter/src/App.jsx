@@ -5,10 +5,10 @@ import Navbar from "./components/Navbar/Index";
 
 function App() {
   const { isOpen } = useSelector((store) => store.modal);
+
   return (
     <main>
       {isOpen && <Modal />}
-
       <Navbar />
       <CartContainer />
     </main>
